@@ -7,8 +7,10 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "clPalabras.h"
+#import "clRepoPalabras.h"
+
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -55,25 +57,6 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return _objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    return cell;
-}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
@@ -88,6 +71,37 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSMutableArray * arrPalabras = [clRepoPalabras instanciaPublica].arrayPalabras;
+    return [arrPalabras count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSMutableArray * arrPalabras = [clRepoPalabras instanciaPublica].arrayPalabras;
+    clPalabras * palabra = [arrPalabras objectAtIndex:indexPath.row];
+    
+    static NSString * nomCeldaPalabra = @"celdaPalabra";
+    UITableViewCell * myCelda = [tableView dequeueReusableCellWithIdentifier:nomCeldaPalabra];
+    myCelda.textLabel.text = palabra.palabra;
+    myCelda.detailTextLabel.text = palabra.dsPalabra;
+    
+    return myCelda;
+    /*
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+     
+     NSDate *object = _objects[indexPath.row];
+     cell.textLabel.text = [object description];
+     return cell;
+     */
 }
 
 /*
