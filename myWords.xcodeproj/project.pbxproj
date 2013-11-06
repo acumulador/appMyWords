@@ -23,6 +23,9 @@
 		7535B4251828988D00BA2064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535B4011828988D00BA2064 /* UIKit.framework */; };
 		7535B42D1828988D00BA2064 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535B42B1828988D00BA2064 /* InfoPlist.strings */; };
 		7535B42F1828988D00BA2064 /* myWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535B42E1828988D00BA2064 /* myWordsTests.m */; };
+		7535B43B1828991000BA2064 /* clPalabras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535B43A1828991000BA2064 /* clPalabras.m */; };
+		7535B43E182899C500BA2064 /* clRepoPalabras.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535B43D182899C500BA2064 /* clRepoPalabras.m */; };
+		7535B4411828AF6200BA2064 /* NuevoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535B4401828AF6200BA2064 /* NuevoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,12 @@
 		7535B42A1828988D00BA2064 /* myWordsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myWordsTests-Info.plist"; sourceTree = "<group>"; };
 		7535B42C1828988D00BA2064 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7535B42E1828988D00BA2064 /* myWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myWordsTests.m; sourceTree = "<group>"; };
+		7535B4391828991000BA2064 /* clPalabras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = clPalabras.h; path = clases/clPalabras.h; sourceTree = "<group>"; };
+		7535B43A1828991000BA2064 /* clPalabras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = clPalabras.m; path = clases/clPalabras.m; sourceTree = "<group>"; };
+		7535B43C182899C500BA2064 /* clRepoPalabras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clRepoPalabras.h; sourceTree = "<group>"; };
+		7535B43D182899C500BA2064 /* clRepoPalabras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clRepoPalabras.m; sourceTree = "<group>"; };
+		7535B43F1828AF6200BA2064 /* NuevoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuevoViewController.h; sourceTree = "<group>"; };
+		7535B4401828AF6200BA2064 /* NuevoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuevoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +126,7 @@
 		7535B4031828988D00BA2064 /* myWords */ = {
 			isa = PBXGroup;
 			children = (
+				7535B438182898BE00BA2064 /* clases */,
 				7535B40C1828988D00BA2064 /* AppDelegate.h */,
 				7535B40D1828988D00BA2064 /* AppDelegate.m */,
 				7535B40F1828988D00BA2064 /* Main_iPhone.storyboard */,
@@ -127,6 +137,8 @@
 				7535B4191828988D00BA2064 /* DetailViewController.m */,
 				7535B41B1828988D00BA2064 /* Images.xcassets */,
 				7535B4041828988D00BA2064 /* Supporting Files */,
+				7535B43F1828AF6200BA2064 /* NuevoViewController.h */,
+				7535B4401828AF6200BA2064 /* NuevoViewController.m */,
 			);
 			path = myWords;
 			sourceTree = "<group>";
@@ -158,6 +170,17 @@
 				7535B42B1828988D00BA2064 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7535B438182898BE00BA2064 /* clases */ = {
+			isa = PBXGroup;
+			children = (
+				7535B4391828991000BA2064 /* clPalabras.h */,
+				7535B43C182899C500BA2064 /* clRepoPalabras.h */,
+				7535B43D182899C500BA2064 /* clRepoPalabras.m */,
+				7535B43A1828991000BA2064 /* clPalabras.m */,
+			);
+			name = clases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7535B40E1828988D00BA2064 /* AppDelegate.m in Sources */,
+				7535B43B1828991000BA2064 /* clPalabras.m in Sources */,
+				7535B43E182899C500BA2064 /* clRepoPalabras.m in Sources */,
 				7535B4171828988D00BA2064 /* MasterViewController.m in Sources */,
+				7535B4411828AF6200BA2064 /* NuevoViewController.m in Sources */,
 				7535B40A1828988D00BA2064 /* main.m in Sources */,
 				7535B41A1828988D00BA2064 /* DetailViewController.m in Sources */,
 			);
