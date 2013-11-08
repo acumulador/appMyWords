@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class clPalabras;
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (weak, nonatomic) IBOutlet UILabel *lblPalabra;
+@property (weak, nonatomic) IBOutlet UITextView *lblDsPalabra;
+
+@property (strong, nonatomic) clPalabras * detallePalabra;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

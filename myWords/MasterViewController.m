@@ -130,18 +130,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSDate *object = _objects[indexPath.row];
         self.detailViewController.detailItem = object;
-    }
+    }*/
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+    if ([[segue identifier] isEqualToString:@"mostrarDetalle"]) {
+        DetailViewController * dsPalabra = [segue destinationViewController];
+        
+        NSMutableArray * arrPalabras = [clRepoPalabras instanciaPublica].arrayPalabras;
+        clPalabras * palabra = [arrPalabras objectAtIndex: [self.tableView indexPathForSelectedRow].row];
+        
+        dsPalabra.detallePalabra = palabra;
     }
 }
 
