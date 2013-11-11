@@ -6,4 +6,8 @@
 @property (nonatomic, strong) NSMutableArray * arrayPalabras;
 +(clRepoPalabras *) instanciaPublica;
 
+-(void) leerPalabras;
+-(void) guardarPalabras;
+-(NSString *) rutaPlist;
+
 @end
